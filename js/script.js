@@ -1,13 +1,13 @@
 // This div is where your profile name will appear.
 const profile = document.querySelector(".overview");
-const username = "Kaylee Toth";
+const userame = "kayleeToth";
 
 // create and name an async function to fetch information from your GitHub profile. 
 
 const gitCreatorInfo = async function () {
-    const creatorInfo = await fetch(`/https://api.github.com/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/users/${username}`);
+    const creatorInfo = await fetch(`https://api.github.com/users/${username}`);
     const data = await creatorInfo.json();
-    //console.log(data);
+    console.log(data);
     displayCreatorInfo(data);
   };
   
@@ -27,5 +27,5 @@ const gitCreatorInfo = async function () {
         <p><strong>Number of public repos:</strong> ${data.public_repos}</p>
       </div>
     `;
-    overview.append(div);
+    profile.append(div);
   };
