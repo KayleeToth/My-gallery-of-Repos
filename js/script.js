@@ -1,6 +1,6 @@
 // This div is where your profile name will appear.
 const profile = document.querySelector(".overview");
-const userame = "kayleeToth";
+const username = "KayleeToth";
 
 // create and name an async function to fetch information from your GitHub profile. 
 
