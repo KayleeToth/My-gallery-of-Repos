@@ -15,7 +15,7 @@ const gitCreatorInfo = async function () {
   
   const displayCreatorInfo = function (data) {
     const div = document.createElement("div");
-    div.classList.add("creator-info");
+    div.classList.add("user-info");
     div.innerHTML = `
       <figure>
         <img alt="user avatar" src=${data.avatar_url} />
