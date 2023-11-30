@@ -4,6 +4,8 @@ const username = "KayleeToth";
 const reposList = document.querySelector(".repo-list"); 
 const allRepoInfo = document.querySelector(".repos");
 const repoData = document.querySelector(".repo-data");
+const returnToGalleryButton = document.querySelector(".view-repos");
+const filterInput = document.querySelector(".filter-repos");
 
 // create and name an async function to fetch information from your GitHub profile. 
 
@@ -41,6 +43,7 @@ const gitCreatorInfo = async function () {
   };
 
   const displayRepos = function (repos) {
+    filterInput.classList.remove("hide");
     for (const repo of repos) {
       const repoItem = document.createElement("li");
       repoItem.classList.add("repo");
@@ -73,6 +76,7 @@ const gitCreatorInfo = async function () {
   };
   
   const displayRepoInfo = function (repoInfo, languages) {
+    returnToGalleryButton.classList.remove("hide");
     repoData.innerHTML = "";
     repoData.classList.remove("hide");
     allRepoInfo.classList.add("hide");
@@ -86,3 +90,18 @@ const gitCreatorInfo = async function () {
     `;
     repoData.append(div);
   };
+
+  returnToGalleryButton.addEventListener("click", function () {
+    allRepoInfo.classList.remove("hide");
+    repoData.classList.add("hide");
+    returnToGalleryButton.classList.add("hide");
+
+  });
+
+  filterInput.addEventListener("input", function (e) {
+    const searchText = e.target.value;
+    console.log(searchText);
+
+
+    
+  })
