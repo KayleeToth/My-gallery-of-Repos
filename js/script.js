@@ -100,8 +100,14 @@ const gitCreatorInfo = async function () {
 
   filterInput.addEventListener("input", function (e) {
     const searchText = e.target.value;
-    console.log(searchText);
+    //console.log(searchText);
 
-
-    
-  })
+    for (const repo of repos) {
+        const repoLowerText = repo.innerText.toLowerCase();
+        if (repoLowerText.includes(searchLowerText)) {
+          repo.classList.remove("hide");
+        } else {
+          repo.classList.add("hide");
+        }
+      }
+});
