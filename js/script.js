@@ -61,7 +61,7 @@ const gitCreatorInfo = async function () {
   const getRepoInfo = async function (repoName) {
     const fetchInfo = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
     const repoInfo = await fetchInfo.json();
-    console.log(repoInfo);
+    //console.log(repoInfo);
    
     const fetchLanguages = await fetch(repoInfo.languages_url);
     const languageData = await fetchLanguages.json();
@@ -101,6 +101,8 @@ const gitCreatorInfo = async function () {
   filterInput.addEventListener("input", function (e) {
     const searchText = e.target.value;
     //console.log(searchText);
+    const repos = document.querySelectorAll(".repo")
+    const searchLowerText = searchText.toLowerCase();
 
     for (const repo of repos) {
         const repoLowerText = repo.innerText.toLowerCase();
@@ -110,4 +112,4 @@ const gitCreatorInfo = async function () {
           repo.classList.add("hide");
         }
       }
-});
+ });
